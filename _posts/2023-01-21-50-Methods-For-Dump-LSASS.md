@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "40 Methods For Privilege Escalation(RTC0002)"
+title:  "50 Methods For Dump lsass(RTC0002)"
 author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
