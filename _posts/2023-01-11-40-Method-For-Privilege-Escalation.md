@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "40 Methods For Privilege Escalation"
+title:  "40 Methods For Privilege Escalation(RTC0001)"
 author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
