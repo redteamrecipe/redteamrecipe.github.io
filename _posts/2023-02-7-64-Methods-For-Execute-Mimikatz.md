@@ -5,7 +5,7 @@ author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
 image: assets/images/11.jpg
-description: "50 Methods For Dump Lsass"
+description: "64 Methods for Execute Mimikatz"
 featured: true
 hidden: true
 rating: 4.5
