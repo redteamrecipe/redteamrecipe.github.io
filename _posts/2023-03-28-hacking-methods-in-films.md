@@ -230,24 +230,11 @@ Maltego
 +
 
 
-https://www.osintcombine.com/reverse-image-analyzer
 https://face8.ai/faceMaster#fc
-https://thispersondoesnotexist.com/
-https://seintpl.github.io/AmIReal/
-https://fotoforensics.com/
-https://extract.pics/
-https://chrome.google.com/webstore/detail/fake-profile-detector-dee/jbpcgcnnhmjmajjkgdaogpgefbnokpcc?hl=en-US
-https://peakvisor.com/identify-mountains.html#
-https://scamsearch.io/#anchorCeckNow
 https://vanceai.com/sharpen-ai/
-https://neural.love/orders
 https://facecheck.id/
 https://pimeyes.com/en
 https://search4faces.com/vkokn/index.html
-https://search4faces.com/en/tt00/index.html
-https://snapedit.app/
-https://www.pic2map.com/
-https://github.com/seintpl/osint
 
 
 
