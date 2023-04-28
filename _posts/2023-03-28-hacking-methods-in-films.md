@@ -6,7 +6,7 @@ categories: [ tutorial ]
 tags: [red, blue]
 image: assets/images/The-Girl-with-the-Dragon-Tattoo-2009.jpg
 description: "Hacking Methods In Films"
-featured: true
+featured: false
 hidden: true
 rating: 4.5
 ---
@@ -230,11 +230,11 @@ Maltego
 +
 
 
-https://face8.ai/faceMaster#fc
-https://vanceai.com/sharpen-ai/
-https://facecheck.id/
-https://pimeyes.com/en
-https://search4faces.com/vkokn/index.html
+* https://face8.ai/faceMaster#fc
+* https://vanceai.com/sharpen-ai/
+* https://facecheck.id/
+* https://pimeyes.com/en
+* https://search4faces.com/vkokn/index.html
 
 
 
