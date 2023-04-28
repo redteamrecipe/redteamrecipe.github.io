@@ -4,7 +4,7 @@ title:  "Hacking Methods In Films(RTF0001)"
 author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
-image: assets/images/12.jpg
+image: assets/images/The-Girl-with-the-Dragon-Tattoo-2009.jpg
 description: "Hacking Methods In Films"
 featured: true
 hidden: true
