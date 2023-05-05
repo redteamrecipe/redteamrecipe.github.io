@@ -4,7 +4,7 @@ title:  "Finding 0-day vulnerabilities in apps using the Red Team approach(RTC00
 author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
-image: assets/images/12.jpg
+image: assets/images/13.jpg
 description: "Finding 0-day vulnerabilities in apps using the Red Team approach"
 featured: true
 hidden: true
