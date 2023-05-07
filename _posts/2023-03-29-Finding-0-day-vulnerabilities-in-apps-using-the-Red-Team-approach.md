@@ -12,10 +12,6 @@ rating: 4.5
 ---
 
 
-## Finding 0-day vulnerabilities in apps using the Red Team approach
-
-
-
 ### Apache Log4j2 Deserialization of Untrusted Data 
 
 
