@@ -11,6 +11,7 @@ hidden: true
 rating: 4.5
 ---
 
+Cover by: Andreas Rocha
 
 ## Local Port Scanner
 
@@ -134,6 +135,10 @@ def censys_search_ports(service):
 
 ### Whois company
 
+https://opencorporates.com/
+https://github.com/chrieke/awesome-geospatial-companies
+https://opengovus.com/
+
 ```
 import requests
 
@@ -163,6 +168,7 @@ def awesome_geospatial_whois_company(company_name):
 
 ### Leakage Search 
 
+https://search.illicit.services/
 
 ```
 import requests
@@ -180,6 +186,10 @@ def search_illicit_services(query):
 
 
 ## Whois Company
+
+https://viewdns.info/reverseip/?host=threatradar.net&t=1
+https://digital.com/best-web-hosting/who-is/#search=hadess.io
+https://dnslytics.com/reverse-analytics
 
 ```
 import requests
@@ -221,6 +231,12 @@ def dnslytics_reverse_analytics(domain):
 
 ### LinkedIn profiles
 
+https://theorg.com/organizations
+https://www.linkedin.com/sales/gmail/profile/viewByEmail/reza@gmail.com?_l=en_US
+https://www.importyeti.com/company/apple
+https://github.com/chm0dx/peepedIn
+`site:(linkedin.com/in | zoominfo.com/p | rocketreach.co | xing.com/people | contactout.com) "company"
+https://www.bing.com/webmaster/tools/mobile-friendliness
 
 ```
 import requests
@@ -272,6 +288,7 @@ def bing_mobile_friendliness_check(url):
 
 ### Facebook Username
 
+https://whopostedwhat.com/
 
 ```
 from MaltegoTransform import *
@@ -330,6 +347,13 @@ ma.returnOutput()
 
 
 ### Whois Email
+
+https://rocketreach.co/browser_extension
+ https://contactout.com/
+ https://app.getprospect.com/303197/contacts/filter/all
+https://epieos.com/
+https://www.ceoemail.com/
+http://www.cyberforensics.in/OnlineEmailTracer/index.aspx
 
 ```
 from MaltegoTransform import *
@@ -390,6 +414,8 @@ ma.returnOutput()
 
 ### IFSC
 
+http://www.ifsccodebank.com/search-by-IFSC-code.aspx
+
 ```
 from MaltegoTransform import *
 import requests
@@ -439,6 +465,7 @@ ma.returnOutput()
 
 ### Code Search
 
+https://searchcode.com/
 
 ```
 from MaltegoTransform import *
@@ -489,6 +516,7 @@ ma.returnOutput()
 
 ### Search Wireless Device Applications
 
+https://fccid.io/?utm_content=cmp-true
 
 ```
 from MaltegoTransform import *
@@ -535,6 +563,10 @@ ma.returnOutput()
 
 
 ### Car
+
+https://carnet.ai/
+https://www.vehiclehistoryreport.com/
+https://www.autocheck.com/vehiclehistory/?siteID=0
 
 ```
 from MaltegoTransform import *
@@ -585,6 +617,29 @@ ma.returnOutput()
 
 
 ### Map & Weather
+
+
+https://www.freemaptools.com/
+https://mapsm.com/?t=satellite-streets-v11
+https://gpsjam.org/?lat=33.76715&lon=50.47420&z=4.3&date=2023-02-12
+https://overpass-turbo.eu/
+https://apps.sentinel-hub.com/eo-browser/
+https://zoom.earth/maps/satellite/#view=37.6,-93,3.64z
+https://app.shadowmap.org/
+https://osm-search.bellingcat.com/
+https://shademap.app/@35.72145,51.33473,17.74332z,1686059584492t,0b,0p,0m,qdGVocmFu!35.72186!51.3347
+https://demo.f4map.com/#lat=35.7072293&lon=51.3891499&zoom=18
+https://wikimapia.org/
+https://livingatlas.arcgis.com/wayback/#active=46399&ext=51.41201,35.68596,51.42323,35.69261
+https://satellites.pro/Iran_map#35.649856,51.397747,18
+qgis: 
+	https://docs.qgis.org/3.28/en/docs/user_manual/preamble/foreword.html
+	what distance is suitable
+	best earth for attack
+satelight:
+	https://geoxc-apps.bd.esri.com/space/satellite-explorer/#norad=45462
+https://www.mapchannels.com/DualMaps.aspx
+
 
 ```
 import requests
@@ -646,6 +701,9 @@ def get_weather_data(search_query):
 
 ### Search Incident
 
+https://alerts.skytruth.org/report/2614736e-1c07-3b37-8e5d-ccb32db79080/
+
+
 ```
 import requests
 from maltego_trx.transform import DiscoverableTransform
@@ -688,6 +746,8 @@ def get_incident_data(search_query):
 
 ### Google Analytics
 
+https://www.osintcombine.com/google-analytics-id-explorer
+
 ```
 import requests
 from maltego_trx.transform import DiscoverableTransform
@@ -727,6 +787,13 @@ def get_analytics_data(search_query):
 ```
 
 ### Building Databases
+
+### Building Databases
+-   https://www.skydb.net
+-   https://osmbuildings.org
+-   https://skyscraperpage.com
+-   https://www.ctbuh.org
+-   https://osm-search.bellingcat.com/
 
 ```
 import requests
@@ -786,6 +853,8 @@ def get_building_data(search_query):
 
 ### Train
 
+https://river-runner-global.samlearner.com/
+
 ```
 import requests
 from maltego_trx.transform import DiscoverableTransform
@@ -827,6 +896,9 @@ def get_train_data(search_query):
 
 
 ### Drug
+
+https://iris.wcoomd.org/?locale=en
+
 
 ```
 import requests
