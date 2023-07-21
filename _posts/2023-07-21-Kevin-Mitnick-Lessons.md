@@ -419,15 +419,21 @@ Building friendly relationships with security personnel to gain their trust and 
 Concealing devices, such as cameras or recording devices, inside office equipment to monitor activities. Example: Mitnick could hide a tiny camera inside a printer or air conditioning unit to observe a company's activities.
 
 
-
 ## Books
 
 * Art of Deception
+* Ghost In The Wires
 
 
-## Presntation
+## Presentation
 
-* -
+* electronic joyride(https://www.youtube.com/watch?v=bA0_-_twhUg)
+* password manager(https://www.youtube.com/watch?v=51smkcoDT24)
+* usb ninja(https://www.youtube.com/watch?v=Le6LP43SHcM)
+* the dangers of public wifi(https://www.youtube.com/watch?v=vz9IPVhBUpc)
+* access card attack(https://www.youtube.com/watch?v=bX8vd37xXbk)
+* Malicious USB Cable(https://www.youtube.com/watch?v=JUQNl5LJzaY)
+
 
 
 Cover By HADESS
