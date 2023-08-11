@@ -4,7 +4,7 @@ title:  "Methods for Stealing Password in Browser(RTC0013)"
 author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
-image: assets/images/22.png
+image: assets/images/22.jpg
 description: "Methods for Stealing Password in Browser"
 featured: true
 hidden: true
