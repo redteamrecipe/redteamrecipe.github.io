@@ -1414,4 +1414,4 @@ This command targets a specific IP and performs SSL stripping to downgrade HTTPS
 `python -c "from PIL import Image; im = Image.open('input.png'); data = open('/path/to/local/file.txt', 'rb').read(); im.putdata([(r&254, g, b) for (r, g, b) in im.getdata()]); im.save('output.png')"`
 
 
-Cover By [Henrik Evensen](https://www.artstation.com/selvestehe)
+Cover By [Henrik Evensen](https://www.artstation.com/selvestehe) and huleeb
