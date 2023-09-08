@@ -72,6 +72,7 @@ rating: 4.5
 
 #### Mindmap
 
+![Top 50 Vulnerabilities Leading to RCE in Public-Facing Applications](/assets/images/top50-vuln.png)
 
 
 ### Log4Shell Vulnerability in Log4j
