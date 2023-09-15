@@ -60,6 +60,33 @@ Given its critical role and the fact that it often runs with elevated privileges
 
 
 
+| Category               | Function Name       | Description                                                                                   |
+|------------------------|---------------------|-----------------------------------------------------------------------------------------------|
+| **Memory Manipulation**| `VirtualAllocEx`    | Allocates memory in the virtual address space of another process.                              |
+|                        | `WriteProcessMemory`| Writes data to an area of memory in a specified process.                                       |
+|                        | `ReadProcessMemory` | Reads data from an area of memory in a specified process.                                      |
+| **Process Control**    | `CreateProcess`     | Creates a new process and its primary thread.                                                 |
+|                        | `OpenProcess`       | Opens an existing local process object.                                                       |
+|                        | `TerminateProcess`  | Ends a process and all its threads.                                                           |
+| **Thread Control**     | `CreateRemoteThread`| Creates a thread that runs in the virtual address space of another process.                    |
+|                        | `SuspendThread`     | Suspends the specified thread.                                                                |
+|                        | `ResumeThread`      | Decreases the suspend count of the specified thread.                                          |
+| **DLL Handling**       | `LoadLibrary`       | Maps the specified executable module into the address space of the calling process.           |
+|                        | `GetProcAddress`    | Retrieves the address of an exported function or variable from the specified dynamic-link library. |
+| **Window Management**  | `FindWindow`        | Retrieves a handle to the top-level window whose class name and window name match the specified strings. |
+|                        | `SendMessage`       | Sends the specified message to a window or windows.                                           |
+| **Registry Manipulation**| `RegOpenKeyEx`     | Opens the specified registry key.                                                             |
+|                        | `RegSetValueEx`     | Sets the data and type of a specified value under a registry key.                              |
+|                        | `RegDeleteValue`    | Removes a named value from the specified registry key.                                        |
+| **File Operations**    | `CreateFile`        | Creates or opens a file or I/O device.                                                        |
+|                        | `ReadFile`          | Reads data from the specified file or input/output (I/O) device.                              |
+|                        | `WriteFile`         | Writes data to the specified file or input/output (I/O) device.                               |
+
+
+
+
+
+
 ### DLL Injection
 
 Injecting a malicious DLL into svchost
