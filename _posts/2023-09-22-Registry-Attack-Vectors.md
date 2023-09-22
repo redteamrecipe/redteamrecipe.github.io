@@ -17,6 +17,9 @@ The Windows Registry is a centralized configuration system that stores informati
 
 ### Structure of the Registry
 
+![Structure of the Registry](/assets/images/reg_path_str.png)
+
+
 The Windows Registry is divided into several different sections, or "hives." Some of the primary hives include:
 
 - **HKEY_CLASSES_ROOT (HKCR):** Contains information about registered applications, such as file associations and OLE Object Class IDs.
