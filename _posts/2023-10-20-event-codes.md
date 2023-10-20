@@ -88,16 +88,24 @@ rating: 4.5
 ### **Unauthorized Access Attempt:**
     
 **ID:** 001
+
 **MITRE Tactic & Techniques:** Initial Access | Phishing [T1566.001]
+
 **Event ID & Code:** 4625 | FAILED_LOGON
+
 **Status Code:** 0x8007052e
+
 **Commands and Code:** `Auditpol /set /subcategory:"Logon" /success:enable /failure:enable`
+
 **Description:** An attempt to log on with incorrect credentials was made.
+
 **Example Offensive Codes and Commands:** `net use \\target-system\IPC$ /user:username wrongpassword`
+
 
 ### **Malware Execution:**
     
 **ID:** 002
+
 **MITRE Tactic & Techniques:** Execution | Command and Scripting Interpreter [T1059]
 **Event ID & Code:** 4104 | POWERSHELL_SCRIPT_EXECUTION
 **Status Code:** N/A
