@@ -700,7 +700,7 @@ This command uses `Start-Process` with a specified verb to handle non-executable
 
 ---
 
-**Querying Service Status with PowerShell**
+## **Querying Service Status with PowerShell**
 
 
 
@@ -712,7 +712,7 @@ This command uses `Get-Win32Service`, a more comprehensive alternative to the bu
 
 ---
 
-**Finding Executables That Import Specific APIs**
+## **Finding Executables That Import Specific APIs**
 
 
 
@@ -724,7 +724,7 @@ This script identifies executables that import the `CreateProcessW` API, which c
 
 ---
 
-**Finding Hidden Registry Keys or Values**
+## **Finding Hidden Registry Keys or Values**
 
 
 
@@ -742,20 +742,18 @@ This command is used to find hidden registry keys, particularly those with NUL c
 
 **Using `Get-NtTokenPrivilege`**
 
-powershellCopy code
 
 `PS> Get-NtTokenPrivilege $token`
 
 This command lists the privileges of a token, showing their names, LUIDs, and whether they are enabled or disabled. This is useful for assessing the capabilities of a user or process.
 
-**Modifying Token Privileges**
+## **Modifying Token Privileges**
 
 - **Enabling/Disabling Privileges**: Using `Enable-NtTokenPrivilege` and `Disable-NtTokenPrivilege`, privileges can be toggled. This is crucial for modifying access rights dynamically.
 - **Removing Privileges**: `Remove-NtTokenPrivilege` completely removes a privilege from a token, preventing its re-enabling.
 
 **Privilege Checks**
 
-powershellCopy code
 
 `PS> Test-NtTokenPrivilege SeChangeNotifyPrivilege`
 
@@ -778,7 +776,7 @@ This command checks if a specific privilege is enabled. It's essential for verif
 1. **Normal Restricted Tokens**: Limit access based on specified restricted SIDs.
 2. **Write-Restricted Tokens**: Introduced in Windows XP SP2, these tokens prevent write access but allow read and execute access, making them simpler but less secure sandboxes.
 
-**Creating and Analyzing Restricted Tokens**
+## **Creating and Analyzing Restricted Tokens**
 
 - **Creating a Restricted Token**: Using `Get-NtToken` with flags like `DisableMaxPrivileges`, `WriteRestricted`, or specifying restricted SIDs.
 - **Properties of Restricted Tokens**: Checking properties like `Restricted` and `WriteRestricted` reveals the nature and limitations of the token.
@@ -786,6 +784,7 @@ This command checks if a specific privilege is enabled. It's essential for verif
 **Use Cases and Limitations** Restricted tokens are essential for creating secure environments, like sandboxes in web browsers, but they have limitations. For instance, a highly restricted token might not be able to access necessary resources, limiting its practical use.
 
 ---
+
 ## User Account Control Bypass and Token Manipulation
 
 
