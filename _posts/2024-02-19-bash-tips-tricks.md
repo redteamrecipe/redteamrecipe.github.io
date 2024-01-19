@@ -4,7 +4,7 @@ title:  "Bash Tips and Tricks(RTC0028)"
 author: redteamrecipe
 categories: [ tutorial ]
 tags: [red, blue]
-image: assets/images/943.jpg
+image: assets/images/643.jpg
 description: "Bash Tips and Tricks"
 featured: true
 hidden: false
