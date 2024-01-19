@@ -6,7 +6,7 @@ categories: [ tutorial ]
 tags: [red, blue]
 image: assets/images/943.jpg
 description: "Bash Tips and Tricks"
-featured: true
+featured: false
 hidden: true
 rating: 4.5
 ---
