@@ -10,6 +10,8 @@ disqus: ''
 mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/
+timezone: America/New_York
+
 
 # Authors
 authors:
