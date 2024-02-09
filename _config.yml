@@ -34,15 +34,16 @@ plugins:
     
 # Archives
 jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
+  enabled: all
+#  enabled:
+#    - categories
+#  layout: archive
+#  permalinks:
+#    category: '/category/:name/'
     
 # Pagination 
-paginate: 12
-paginate_path: /page:num/
+# paginate: 12
+# paginate_path: /page:num/
     
 # Other
 markdown: kramdown
